@@ -1,0 +1,6 @@
+StudentId,parent1_studentId,total,subject
+101,101,485,Mathematics
+102,102,460,Physics
+103,103,495,Chemistry
+104,104,450,Biology
+105,105,500,Computer Science

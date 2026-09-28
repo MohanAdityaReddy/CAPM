@@ -1,0 +1,6 @@
+BookId,parent_studentId,studentName,bookauthor,price,doi,dor
+1,101,Aditya Reddy,Robert Martin,650,2026-01-10,2026-02-10
+2,102,Rahul Sharma,Martin Fowler,750,2026-01-15,2026-02-15
+3,103,Priya Singh,James Gosling,600,2026-01-20,2026-02-20
+4,104,Sneha Patel,Dennis Ritchie,550,2026-01-25,2026-02-25
+5,105,Arjun Kumar,Bjarne Stroustrup,800,2026-01-30,2026-02-28

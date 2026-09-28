@@ -1,0 +1,203 @@
+http://localhost:4004/odata/v4/catalog/PurchaseItemSrv
+###
+POST http://localhost:4004/odata/v4/catalog/createEmployee
+Content-Type: application/json
+
+{
+  "Currency_code": "IND",
+  "ID": "2a5776ec-e711-juag-a92a-2da5b46c40d4",
+  "accountNumber": null,
+  "bankId": null,
+  "bankName": null,
+  "email": null,
+  "gender": "M",
+  "language": "E",
+  "loginName": "mohanaditya",
+  "nameFirst": "mohan",
+  "nameInitials": null,
+  "nameLast": "reddy",
+  "nameMiddle": null,
+  "phoneNumber": "(+91) 9898989898",
+  "salaryAmount": "45000.00"
+}
+###
+
+POST http://localhost:4004/odata/v4/catalog/updateEmployee
+Content-Type: application/json
+
+{
+    "ID": "2a5776ec-e711-4c11-a92a-2da5b46c40a3",
+    "salaryAmount": "50000.00",
+    "Currency_code": "USD"
+}
+
+
+###
+POST http://localhost:4004/odata/v4/catalog/createAddress
+Content-Type: application/json
+
+{
+    "ADDRESS_TYPE":"HOME",
+    "BUILDING":null,
+    "CITY":null,"COUNTRY":null,
+    "LATITUDE":"12.9717",
+    "LONGITUDE":"77.5943",
+    "NODE_KEY":"550e8400-e29b-41d4-a716-446655440000",
+    "POSTAL_CODE":null,
+    "STREET":null,
+    "VAL_END":"2026-12-30",
+    "VAL_START":"2024-01-02"
+}
+###
+POST http://localhost:4004/odata/v4/catalog/updateAddress
+Content-Type: application/json
+
+{
+     "NODE_KEY":"550e8400-e29b-41d4-a716-446655440000",
+    "LATITUDE":"12.9716"
+}
+###
+POST http://localhost:4004/odata/v4/catalog/createProduct
+Content-Type: application/json
+
+{
+   "NODE_KEY"         : "550e8400-e29b-41d4-a716-446655440000",
+"PRODUCT_ID"        : "PRD1001",
+"TYPE_CODE"         : "EL",
+"CATEGORY"       : "Electronics",
+"DESCRIPTION"       : "Samsung Galaxy S24 Mobile Phone",
+"TAX_TARRIF_CODE"   : 1001,
+"MEASURE_UNIT"      : "EA",
+"WEIGHT_MEASURE"    : 1.25,
+"WEIGHT_UNIT"      : "KG",
+"PRICE"             : 49999.99,
+"CURRENCY_CODE"     : "INR",
+"WIDTH"             : 7.50,
+"DEPTH"             : 0.80,
+"HEIGHT"            : 15.60,
+"DIM_UINT"          : "CM"
+
+}
+###
+
+PUT http://localhost:39831/odata/v4/catalog/EmployeeSrv/2a5776ec-e711-4c11-a92a-2da5b46c11b8
+Content-Type: application/json
+
+{
+    "salaryAmount": "105000.00",
+    "Currency_code": "USD"
+}
+###
+PUT http://localhost:39831/odata/v4/catalog/ProductSrv/550e8400-e29b-41d4-a716-446655440000
+Content-Type: application/json
+
+{
+    "PRICE": "105000.99"
+
+}
+
+###
+
+PUT http://localhost:4004/odata/v4/catalog/PurchaseItemSrv/74867AD200E41EDBA5D8B0CBD35A0052
+Content-Type: application/json
+
+{
+    "CURRENCY_code":"USD",
+    "GROSS_AMOUNT": 2000000
+
+}
+###
+
+PUT http://localhost:4004/odata/v4/catalog/AddressSrv/74867AD200E41EDBA5D8B06885678052
+Content-Type: application/json
+
+{
+    "COUNTRY":"jj"
+    
+
+}
+
+POST http://localhost:4004/odata/v4/catalog/deleteEmployee
+Content-Type: application/json
+
+{
+    "ID": "2a5776ec-e711-4c11-a92a-2da5b46c40a2"
+}
+###
+
+GET http://localhost:4004/odata/v4/catalog/getHighestPriceProducts()
+
+###
+GET http://localhost:4004/odata/v4/catalog/getHighestSalariedEmployees()
+###
+
+POST http://localhost:4004/odata/v4/catalog/EmployeeSrv/02BD2137-0890-1EEA-A6C2-BB55C19847FB/IncreaseSal
+Content-Type: application/json
+
+{
+}
+
+
+###
+
+GET http://localhost:4004/odata/v4/catalog/increaseSalary()
+###
+http://localhost:4004/odata/v4/catalog/ProductSrv/$count
+
+###
+
+http://localhost:4004/odata/v4/catalog/ProductSrv?$top=10
+
+###
+http://localhost:4004/odata/v4/catalog/ProductSrv?$top=10&$skip=10
+
+###
+http://localhost:4004/odata/v4/catalog/ProductSrv?$filter=CATEGORY eq 'Notebooks'&DIM_UNIT eq 'CM'
+
+###
+http://localhost:4004/odata/v4/catalog/ProductSrv?$select=PRODUCT_ID,DESCRIPTION,CATEGORY,PRICE
+###
+http://localhost:4004/odata/v4/catalog/ProductSrv?$orderby=PRODUCT_ID desc
+
+
+###
+
+http://localhost:4004/odata/v4/catalog/ProductSrv('74867AD200E41EDBA5D8B06B26F8C052')/PRODUCT_ID
+
+###
+
+http://localhost:4004/odata/v4/catalog/ProductSrv('74867AD200E41EDBA5D8B06B26F8C052')/PRODUCT_ID/$value
+
+###
+
+http://localhost:4004/odata/v4/catalog/PurchaseOrderSrv?$expand=Items
+
+
+###
+
+https://services.odata.org/V4/Northwind/Northwind.svc/Categories?$select=CategoryName,Description
+###
+https://services.odata.org/V4/Northwind/Northwind.svc/Customers?$select=ContactName,CustomerID,CompanyName&$filter=City eq 'London'
+###
+https://services.odata.org/V4/Northwind/Northwind.svc/Suppliers?$filter=Fax ne null
+
+###
+https://services.odata.org/V4/Northwind/Northwind.svc/Customers?$select=CompanyName,ContactName&$filter=ContactTitle eq 'Owner' and (Country eq 'Mexico' or Country eq 'Sweden' or Country eq 'Germany')
+
+
+###
+https://services.odata.org/V4/Northwind/Northwind.svc/Order_Details?$apply=groupby((ProductID),aggregate(Quantity with sum as TotalQuantityOrdered))
+
+
+
+###
+
+POST http://localhost:4004/odata/v4/catalog/deleteEmployee
+Content-Type: application/json
+
+{
+    "ID": "02BD2137-0890-1EEA-A6C2-BB55C19787FB"
+}
+
+###
+GET  http://localhost:4004/odata/v4/catalog/getUtilities()
